@@ -1,5 +1,13 @@
 from pico2d import *
 
+class Boy:
+    def __init__(self):
+        self.image = load_image('run_animation.png')
+    def update(self):
+        pass
+    def draw(self):
+        self.image.clip_draw(0, 0, 100, 100, 400, 90)
+
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
@@ -26,7 +34,9 @@ def reset_world():
     global world
     world = []
     grass = Grass()
+    boy = Boy()
     world.append(grass)
+    world.append(boy)
 
 def update_world():
     for game_object in world:
