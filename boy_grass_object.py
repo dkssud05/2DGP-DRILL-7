@@ -69,11 +69,11 @@ def reset_world():
     world += team
 
     global small_balls
-    small_balls = [Small_ball() for _ in range(20)]
+    small_balls = [Small_ball() for _ in range(10)]
     world += small_balls
 
     global big_balls
-    big_balls = [Big_ball() for _ in range(20)]
+    big_balls = [Big_ball() for _ in range(10)]
     world += big_balls
 
 def update_world():
