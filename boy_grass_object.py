@@ -86,6 +86,7 @@ def render_world():
         game_object.draw()
     update_canvas()
 
+
 reset_world()
 
 while running:
