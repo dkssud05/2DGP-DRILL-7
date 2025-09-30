@@ -3,11 +3,12 @@ import random
 
 class ball:
     def __init__(self):
+        self.x = random.randint(21, 779)
         self.image = load_image('ball21x21.png')
     def update(self):
         pass
     def draw(self):
-        self.image.clip_draw(0, 0, 21, 21, 400, 90)
+        self.image.clip_draw(0, 0, 21, 21, self.x, 599)
 
 class Boy:
     def __init__(self):
@@ -53,7 +54,7 @@ def reset_world():
     world += team
 
     global balls
-    balls = [ball() for _ in range(1)]
+    balls = [ball() for _ in range(20)]
     world += balls
 
 def update_world():
