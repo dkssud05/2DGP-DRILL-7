@@ -8,6 +8,8 @@ class small_ball:
         self.image = load_image('ball21x21.png')
     def update(self):
         self.y -= random.randint(0, 5)
+        if self.y < 50:
+            self.y = 50
     def draw(self):
         self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
 
