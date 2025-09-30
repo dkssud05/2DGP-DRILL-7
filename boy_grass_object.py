@@ -68,12 +68,15 @@ def reset_world():
     team = [Boy() for _ in range(11)]
     world += team
 
+    total_balls = 20
+    x = random.randint(1, total_balls - 1)
+    y = total_balls - x
     global small_balls
-    small_balls = [Small_ball() for _ in range(10)]
+    small_balls = [Small_ball() for _ in range(x)]
     world += small_balls
 
     global big_balls
-    big_balls = [Big_ball() for _ in range(10)]
+    big_balls = [Big_ball() for _ in range(y)]
     world += big_balls
 
 def update_world():
