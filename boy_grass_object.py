@@ -71,6 +71,7 @@ def reset_world():
     total_balls = 20
     x = random.randint(1, total_balls - 1)
     y = total_balls - x
+
     global small_balls
     small_balls = [Small_ball() for _ in range(x)]
     world += small_balls
