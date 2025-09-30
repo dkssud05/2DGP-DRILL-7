@@ -1,12 +1,16 @@
 from pico2d import *
+import random
 
 class Boy:
     def __init__(self):
+        self.x = random.randint(100, 700)
+        self.frame = 0
         self.image = load_image('run_animation.png')
     def update(self):
-        pass
+        self.x += 5
+        self.frame = (self.frame + 1) % 8
     def draw(self):
-        self.image.clip_draw(0, 0, 100, 100, 400, 90)
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, 90)
 
 class Grass:
     def __init__(self):
@@ -34,9 +38,11 @@ def reset_world():
     global world
     world = []
     grass = Grass()
-    boy = Boy()
     world.append(grass)
-    world.append(boy)
+
+    global team
+    team = [Boy() for _ in range(11)]
+    world += team
 
 def update_world():
     for game_object in world:
