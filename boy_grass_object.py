@@ -1,5 +1,13 @@
 from pico2d import *
 
+class Grass:
+    def __init__(self):
+        self.image = load_image('grass.png')
+    def update(self):
+        pass
+    def draw(self):
+        self.image.draw(400, 30)
+
 def handle_events():
     global running
     events = get_events()
@@ -15,11 +23,20 @@ def reset_world():
     global running
     running = True
 
+    global world
+    world = []
+    grass = Grass()
+    world.append(grass)
+
 def update_world():
-    pass
+    for game_object in world:
+        game_object.update()
 
 def render_world():
-    pass
+    clear_canvas()
+    for game_object in world:
+        game_object.draw()
+    update_canvas()
 
 reset_world()
 
