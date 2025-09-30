@@ -3,11 +3,13 @@ import random
 
 class Big_ball:
     def __init__(self):
+        self.x = random.randint(41, 759)
+        self.y = 599
         self.image = load_image('ball41x41.png')
     def update(self):
-        pass
+        self.y -= random.randint(0, 5)
     def draw(self):
-        self.image.clip_draw(0, 0, 41, 41, 400, 599)
+        self.image.clip_draw(0, 0, 41, 41, self.x, self.y)
 
 class Small_ball:
     def __init__(self):
