@@ -4,11 +4,12 @@ import random
 class ball:
     def __init__(self):
         self.x = random.randint(21, 779)
+        self.y = 599
         self.image = load_image('ball21x21.png')
     def update(self):
-        pass
+        self.y -= 9.8
     def draw(self):
-        self.image.clip_draw(0, 0, 21, 21, self.x, 599)
+        self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
 
 class Boy:
     def __init__(self):
