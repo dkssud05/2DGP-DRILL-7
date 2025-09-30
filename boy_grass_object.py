@@ -1,13 +1,13 @@
 from pico2d import *
 import random
 
-class ball:
+class small_ball:
     def __init__(self):
         self.x = random.randint(21, 779)
         self.y = 599
         self.image = load_image('ball21x21.png')
     def update(self):
-        self.y -= 9.8
+        self.y -= random.randint(0, 5)
     def draw(self):
         self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
 
@@ -55,7 +55,7 @@ def reset_world():
     world += team
 
     global balls
-    balls = [ball() for _ in range(20)]
+    balls = [small_ball() for _ in range(20)]
     world += balls
 
 def update_world():
