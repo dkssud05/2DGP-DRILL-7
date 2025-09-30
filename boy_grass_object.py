@@ -1,7 +1,10 @@
 from pico2d import *
 import random
 
-class small_ball:
+class Big_ball:
+    pass
+
+class Small_ball:
     def __init__(self):
         self.x = random.randint(21, 779)
         self.y = 599
@@ -57,7 +60,7 @@ def reset_world():
     world += team
 
     global balls
-    balls = [small_ball() for _ in range(20)]
+    balls = [Small_ball() for _ in range(20)]
     world += balls
 
 def update_world():
