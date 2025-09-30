@@ -2,7 +2,12 @@ from pico2d import *
 import random
 
 class Big_ball:
-    pass
+    def __init__(self):
+        self.image = load_image('ball41x41.png')
+    def update(self):
+        pass
+    def draw(self):
+        self.image.clip_draw(0, 0, 41, 41, 400, 599)
 
 class Small_ball:
     def __init__(self):
@@ -59,9 +64,13 @@ def reset_world():
     team = [Boy() for _ in range(11)]
     world += team
 
-    global balls
-    balls = [Small_ball() for _ in range(20)]
-    world += balls
+    global small_balls
+    small_balls = [Small_ball() for _ in range(20)]
+    world += small_balls
+
+    global big_balls
+    big_balls = [Big_ball() for _ in range(20)]
+    world += big_balls
 
 def update_world():
     for game_object in world:
