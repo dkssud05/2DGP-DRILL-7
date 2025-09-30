@@ -8,6 +8,8 @@ class Big_ball:
         self.image = load_image('ball41x41.png')
     def update(self):
         self.y -= random.randint(0, 5)
+        if self.y < 70:
+            self.y = 70
     def draw(self):
         self.image.clip_draw(0, 0, 41, 41, self.x, self.y)
 
@@ -18,8 +20,8 @@ class Small_ball:
         self.image = load_image('ball21x21.png')
     def update(self):
         self.y -= random.randint(0, 5)
-        if self.y < 50:
-            self.y = 50
+        if self.y < 55:
+            self.y = 55
     def draw(self):
         self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
 
